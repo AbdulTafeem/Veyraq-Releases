@@ -1,7 +1,7 @@
 {
   "versionCode": 38,
-  "versionName": "5.7.1",
-  "apkUrl": "https://github.com/AbdulTafeem/Lumina-Releases/releases/download/v5.7.1/app-arm64-v8a-release.apk",
-  "changelog": "- Zero Mid-Song Stream Drops: Instant NewPipe & InnerTube fallback recovery\n- Smoother Playback & Cellular Resilience: Tuned buffers + faster 4G/5G stream resolution\n- Privacy Hardening: Redacted search queries, profile info & local paths from logs\n- 120fps Apple Music Liquid Glass UI & 3D Plush Hello Kitty Mode (by Avnisha)",
+  "versionName": "5.7.2",
+  "apkUrl": "https://github.com/AbdulTafeem/Veyraq-Releases/releases/download/v5.7.2/app-arm64-v8a-release.apk",
+  "changelog": "- Flagship Rebrand to Veyraq Music: Liquid Glass 3-Bar Prism Wave mark & icon\n- Live Playback & Back-Navigation Motion: Beat-reactive bars & fluid back-flow surge\n- Zero Mid-Song Stream Drops: Instant NewPipe & InnerTube fallback recovery\n- Smoother Playback & Cellular Resilience: Tuned buffers + faster 4G/5G stream resolution",
   "forceUpdate": false
 }
