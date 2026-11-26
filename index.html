@@ -306,7 +306,79 @@
 
   
 </style>
-<meta property="og:title" content="Veyraq Music v5.7.2 — Refracted in Liquid Glass" /><meta property="og:description" content="120fps Liquid Glass, 8 Player Styles, Strict Snow White & OLED Black isolation, and 3D Plush Hello Kitty Cute Mode designed by Avnisha." /><meta property="og:image" content="https://abdultafeem.github.io/Veyraq-Releases/50-player-hero.png" /><style>html{scroll-behavior:smooth}#prom-bar{position:fixed;top:0;left:0;height:2.5px;width:0%;z-index:9999;background:linear-gradient(90deg,#FF5436,#F25287,#25529B);pointer-events:none;transition:width 80ms linear}nav a.nav-active{color:#FF5436!important;font-weight:800}</style></head>
+<meta property="og:title" content="Veyraq Music v5.7.2 — Refracted in Liquid Glass" /><meta property="og:description" content="120fps Liquid Glass, 8 Player Styles, Strict Snow White & OLED Black isolation, and 3D Plush Hello Kitty Cute Mode designed by Avnisha." /><meta property="og:image" content="https://abdultafeem.github.io/Veyraq-Releases/50-player-hero.png" /><style>html{scroll-behavior:smooth}#prom-bar{position:fixed;top:0;left:0;height:2.5px;width:0%;z-index:9999;background:linear-gradient(90deg,#FF5436,#F25287,#25529B);pointer-events:none;transition:width 80ms linear}nav a.nav-active{color:#FF5436!important;font-weight:800}</style><style id="veyraq-3bar-motion">
+  .veyraq-3bar-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    background: linear-gradient(155deg, #F8F9FB 0%, #ECEEF3 100%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms ease;
+    cursor: pointer;
+  }
+  .veyraq-3bar-mark:hover,
+  .veyraq-3bar-mark.is-flowing {
+    transform: translateY(-1px) scale(1.04);
+    box-shadow: 0 10px 22px rgba(255, 84, 54, 0.16), 0 4px 12px rgba(37, 82, 155, 0.14);
+  }
+  .veyraq-bar {
+    width: 5px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #2D323E 0%, #111318 55%, #07080B 100%);
+    will-change: height, transform;
+  }
+  .veyraq-bar-1 {
+    height: 13px;
+    box-shadow: inset 0 0 0 1px rgba(255, 84, 54, 0.85);
+    animation: veyraqPulse1 1.05s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .veyraq-bar-2 {
+    height: 22px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.92);
+    animation: veyraqPulse2 1.05s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.16s;
+  }
+  .veyraq-bar-3 {
+    height: 17px;
+    box-shadow: inset 0 0 0 1px rgba(72, 123, 255, 0.88);
+    animation: veyraqPulse3 1.05s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.32s;
+  }
+  .veyraq-3bar-mark.is-flowing .veyraq-bar-1,
+  .veyraq-3bar-mark.is-flowing .veyraq-bar-2,
+  .veyraq-3bar-mark.is-flowing .veyraq-bar-3 {
+    animation-duration: 0.52s;
+  }
+  .veyraq-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 520ms cubic-bezier(0.22, 1, 0.36, 1), transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .veyraq-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @keyframes veyraqPulse1 {
+    0%, 100% { height: 11px; transform: translateY(0px); }
+    50%      { height: 19px; transform: translateY(-1px); }
+  }
+  @keyframes veyraqPulse2 {
+    0%, 100% { height: 22px; transform: translateY(0px); }
+    50%      { height: 14px; transform: translateY(1px); }
+  }
+  @keyframes veyraqPulse3 {
+    0%, 100% { height: 16px; transform: translateY(0px); }
+    50%      { height: 23px; transform: translateY(-1px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .veyraq-bar-1, .veyraq-bar-2, .veyraq-bar-3 { animation: none !important; }
+    .veyraq-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+</style>
+</head>
 <div id="prom-bar"></div><body class="selection:bg-[#FF6B3D]/20 selection:text-[#2D1814]">
 
   <!-- Soft Warm Alabaster & Cobalt Daylight Orbs -->
@@ -321,44 +393,7 @@
       <!-- Ultra-Premium 4K-Style Liquid Glass Squircle & 3D Luminous Play-Ribbon Monogram -->
       <a href="#" class="flex items-center gap-3.5 group">
         <div class="relative w-11 h-11 rounded-[15px] flex items-center justify-center bg-gradient-to-br from-white via-[#FFF6F2] to-[#EAF1FF] border border-white shadow-[0_10px_24px_rgba(45,24,20,0.12),0_2px_8px_rgba(255,107,61,0.18),inset_0_2px_2.5px_rgba(255,255,255,1)] group-hover:scale-105 group-hover:rotate-[-2deg] transition-all duration-300">
-          <svg viewBox="0 0 128 128" class="w-9 h-9 veyraq-emblem-3d" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="veyraqMark1_bg" x1="8" y1="8" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#14141A" />
-      <stop offset="50%" stop-color="#050507" />
-      <stop offset="100%" stop-color="#0D0606" />
-    </linearGradient>
-    <linearGradient id="veyraqMark1_rim" x1="10" y1="10" x2="118" y2="118" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFB49E" stop-opacity="0.85" />
-      <stop offset="45%" stop-color="#FF5436" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#FF785A" stop-opacity="0.7" />
-    </linearGradient>
-    <linearGradient id="veyraqMark1_shell" x1="26" y1="20" x2="106" y2="104" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA890" />
-      <stop offset="30%" stop-color="#FF5436" />
-      <stop offset="68%" stop-color="#9E160E" />
-      <stop offset="88%" stop-color="#290504" />
-      <stop offset="100%" stop-color="#FF6E4E" />
-    </linearGradient>
-    <linearGradient id="veyraqMark1_note" x1="42" y1="34" x2="70" y2="90" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFE4DB" />
-      <stop offset="48%" stop-color="#FF8A6E" />
-      <stop offset="100%" stop-color="#D92B1C" />
-    </linearGradient>
-    <linearGradient id="veyraqMark1_flag" x1="68" y1="42" x2="94" y2="74" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFD0C2" />
-      <stop offset="55%" stop-color="#FF5436" />
-      <stop offset="100%" stop-color="#8C110A" />
-    </linearGradient>
-  </defs>
-  <rect x="6" y="6" width="116" height="116" rx="30" fill="url(#veyraqMark1_bg)" stroke="url(#veyraqMark1_rim)" stroke-width="3.5" />
-  <path d="M47 18C53 14 61 16 70 21L106 42C114 47 117 55 113 63L94 96C90 104 81 106 72 102L37 88C29 84 26 76 30 67L44 34C46 28 44 21 47 18Z" fill="url(#veyraqMark1_shell)" />
-  <path d="M68 28L101 47C106 50 107 56 104 61L95 76C92 68 84 62 74 61C71 50 64 38 68 28Z" fill="#180303" />
-  <path d="M36 70C44 66 53 70 57 79C60 86 68 91 76 92L71 99L40 85C34 83 32 76 36 70Z" fill="#220504" />
-  <path d="M60 34C66 34 69 39 69 46V73C69 82 62 88 53 87C45 86 41 80 43 73C45 66 53 63 60 65V40C60 36 58 34 60 34Z" fill="url(#veyraqMark1_note)" />
-  <path d="M69 43C79 47 90 54 94 60C96 65 91 70 81 74C75 77 71 73 71 66V49C71 45 70 44 69 43Z" fill="url(#veyraqMark1_flag)" />
-  <circle cx="91" cy="88" r="5.5" fill="#FFE8E0" />
-</svg>
+          <span class="veyraq-3bar-mark veyraq-mark-instance" title="Tap to pulse Veyraq flow"><span class="veyraq-bar veyraq-bar-1"></span><span class="veyraq-bar veyraq-bar-2"></span><span class="veyraq-bar veyraq-bar-3"></span></span>
         </div>
         <div class="flex flex-col">
           <span class="font-black text-[#2D1814] tracking-tight text-base leading-none">Veyraq</span>
@@ -889,44 +924,7 @@
       <div class="liquid-glass-white rounded-[38px] p-8 sm:p-12 text-center space-y-6 relative overflow-hidden">
         <!-- Centered 4K Liquid Glass Squircle Emblem -->
         <div class="mx-auto w-20 h-20 rounded-[26px] flex items-center justify-center bg-gradient-to-br from-white via-[#FFF6F2] to-[#EAF1FF] border border-white shadow-[0_18px_40px_rgba(45,24,20,0.12),0_4px_14px_rgba(255,107,61,0.18),inset_0_2px_3px_rgba(255,255,255,1)]">
-          <svg viewBox="0 0 128 128" class="w-16 h-16 veyraq-emblem-3d" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="veyraqMark2_bg" x1="8" y1="8" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#14141A" />
-      <stop offset="50%" stop-color="#050507" />
-      <stop offset="100%" stop-color="#0D0606" />
-    </linearGradient>
-    <linearGradient id="veyraqMark2_rim" x1="10" y1="10" x2="118" y2="118" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFB49E" stop-opacity="0.85" />
-      <stop offset="45%" stop-color="#FF5436" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#FF785A" stop-opacity="0.7" />
-    </linearGradient>
-    <linearGradient id="veyraqMark2_shell" x1="26" y1="20" x2="106" y2="104" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA890" />
-      <stop offset="30%" stop-color="#FF5436" />
-      <stop offset="68%" stop-color="#9E160E" />
-      <stop offset="88%" stop-color="#290504" />
-      <stop offset="100%" stop-color="#FF6E4E" />
-    </linearGradient>
-    <linearGradient id="veyraqMark2_note" x1="42" y1="34" x2="70" y2="90" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFE4DB" />
-      <stop offset="48%" stop-color="#FF8A6E" />
-      <stop offset="100%" stop-color="#D92B1C" />
-    </linearGradient>
-    <linearGradient id="veyraqMark2_flag" x1="68" y1="42" x2="94" y2="74" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFD0C2" />
-      <stop offset="55%" stop-color="#FF5436" />
-      <stop offset="100%" stop-color="#8C110A" />
-    </linearGradient>
-  </defs>
-  <rect x="6" y="6" width="116" height="116" rx="30" fill="url(#veyraqMark2_bg)" stroke="url(#veyraqMark2_rim)" stroke-width="3.5" />
-  <path d="M47 18C53 14 61 16 70 21L106 42C114 47 117 55 113 63L94 96C90 104 81 106 72 102L37 88C29 84 26 76 30 67L44 34C46 28 44 21 47 18Z" fill="url(#veyraqMark2_shell)" />
-  <path d="M68 28L101 47C106 50 107 56 104 61L95 76C92 68 84 62 74 61C71 50 64 38 68 28Z" fill="#180303" />
-  <path d="M36 70C44 66 53 70 57 79C60 86 68 91 76 92L71 99L40 85C34 83 32 76 36 70Z" fill="#220504" />
-  <path d="M60 34C66 34 69 39 69 46V73C69 82 62 88 53 87C45 86 41 80 43 73C45 66 53 63 60 65V40C60 36 58 34 60 34Z" fill="url(#veyraqMark2_note)" />
-  <path d="M69 43C79 47 90 54 94 60C96 65 91 70 81 74C75 77 71 73 71 66V49C71 45 70 44 69 43Z" fill="url(#veyraqMark2_flag)" />
-  <circle cx="91" cy="88" r="5.5" fill="#FFE8E0" />
-</svg>
+          <span class="veyraq-3bar-mark veyraq-mark-instance" title="Tap to pulse Veyraq flow"><span class="veyraq-bar veyraq-bar-1"></span><span class="veyraq-bar veyraq-bar-2"></span><span class="veyraq-bar veyraq-bar-3"></span></span>
         </div>
 
         <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#FFF7F5] border border-[#FF6B3D]/25 shadow-sm">
@@ -1042,44 +1040,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div class="space-y-1.5">
         <div class="flex items-center justify-center md:justify-start gap-2.5">
-          <svg viewBox="0 0 128 128" class="w-7 h-7 shrink-0 veyraq-emblem-3d" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="veyraqMark3_bg" x1="8" y1="8" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#14141A" />
-      <stop offset="50%" stop-color="#050507" />
-      <stop offset="100%" stop-color="#0D0606" />
-    </linearGradient>
-    <linearGradient id="veyraqMark3_rim" x1="10" y1="10" x2="118" y2="118" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFB49E" stop-opacity="0.85" />
-      <stop offset="45%" stop-color="#FF5436" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#FF785A" stop-opacity="0.7" />
-    </linearGradient>
-    <linearGradient id="veyraqMark3_shell" x1="26" y1="20" x2="106" y2="104" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA890" />
-      <stop offset="30%" stop-color="#FF5436" />
-      <stop offset="68%" stop-color="#9E160E" />
-      <stop offset="88%" stop-color="#290504" />
-      <stop offset="100%" stop-color="#FF6E4E" />
-    </linearGradient>
-    <linearGradient id="veyraqMark3_note" x1="42" y1="34" x2="70" y2="90" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFE4DB" />
-      <stop offset="48%" stop-color="#FF8A6E" />
-      <stop offset="100%" stop-color="#D92B1C" />
-    </linearGradient>
-    <linearGradient id="veyraqMark3_flag" x1="68" y1="42" x2="94" y2="74" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFD0C2" />
-      <stop offset="55%" stop-color="#FF5436" />
-      <stop offset="100%" stop-color="#8C110A" />
-    </linearGradient>
-  </defs>
-  <rect x="6" y="6" width="116" height="116" rx="30" fill="url(#veyraqMark3_bg)" stroke="url(#veyraqMark3_rim)" stroke-width="3.5" />
-  <path d="M47 18C53 14 61 16 70 21L106 42C114 47 117 55 113 63L94 96C90 104 81 106 72 102L37 88C29 84 26 76 30 67L44 34C46 28 44 21 47 18Z" fill="url(#veyraqMark3_shell)" />
-  <path d="M68 28L101 47C106 50 107 56 104 61L95 76C92 68 84 62 74 61C71 50 64 38 68 28Z" fill="#180303" />
-  <path d="M36 70C44 66 53 70 57 79C60 86 68 91 76 92L71 99L40 85C34 83 32 76 36 70Z" fill="#220504" />
-  <path d="M60 34C66 34 69 39 69 46V73C69 82 62 88 53 87C45 86 41 80 43 73C45 66 53 63 60 65V40C60 36 58 34 60 34Z" fill="url(#veyraqMark3_note)" />
-  <path d="M69 43C79 47 90 54 94 60C96 65 91 70 81 74C75 77 71 73 71 66V49C71 45 70 44 69 43Z" fill="url(#veyraqMark3_flag)" />
-  <circle cx="91" cy="88" r="5.5" fill="#FFE8E0" />
-</svg>
+          <span class="veyraq-3bar-mark veyraq-mark-instance" title="Tap to pulse Veyraq flow"><span class="veyraq-bar veyraq-bar-1"></span><span class="veyraq-bar veyraq-bar-2"></span><span class="veyraq-bar veyraq-bar-3"></span></span>
           <span class="font-black text-[#2D1814] text-lg tracking-tight">Veyraq Music</span>
           <span class="px-2.5 py-0.5 rounded-full bg-[#FFF0EB] text-[11px] font-mono-code font-bold text-[#FF6B3D]">v5.7.2</span>
         </div>
@@ -1615,5 +1576,53 @@ if (heroDlEl) heroDlEl.textContent = totalDl > 0 ? `${totalDl.toLocaleString()} 
   }
 })();
 </script>
-<script>(function(){const bar=document.getElementById("prom-bar");const secs=["screenshots","styles-wheel","optics","whats-new","download"];window.addEventListener("scroll",()=>{requestAnimationFrame(()=>{const st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;if(bar&&dh>0)bar.style.width=((st/dh)*100).toFixed(1)+"%";let cur="";secs.forEach(id=>{const el=document.getElementById(id);if(el&&st>=el.offsetTop-220)cur=id});document.querySelectorAll("nav a[href^=\"#\"]").forEach(a=>{a.classList.toggle("nav-active",a.getAttribute("href")==="#"+cur)})})},{passive:true})})();</script></body>
+<script>(function(){const bar=document.getElementById("prom-bar");const secs=["screenshots","styles-wheel","optics","whats-new","download"];window.addEventListener("scroll",()=>{requestAnimationFrame(()=>{const st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;if(bar&&dh>0)bar.style.width=((st/dh)*100).toFixed(1)+"%";let cur="";secs.forEach(id=>{const el=document.getElementById(id);if(el&&st>=el.offsetTop-220)cur=id});document.querySelectorAll("nav a[href^=\"#\"]").forEach(a=>{a.classList.toggle("nav-active",a.getAttribute("href")==="#"+cur)})})},{passive:true})})();</script><script id="veyraq-motion-controller">
+(function() {
+  const marks = Array.from(document.querySelectorAll('.veyraq-mark-instance'));
+  let flowTimer = null;
+  function pulseMarks(durationMs) {
+    marks.forEach((m) => m.classList.add('is-flowing'));
+    clearTimeout(flowTimer);
+    flowTimer = setTimeout(() => {
+      marks.forEach((m) => m.classList.remove('is-flowing'));
+    }, durationMs || 950);
+  }
+  marks.forEach((m) => m.addEventListener('click', () => pulseMarks(1100)));
+
+  const targets = Array.from(document.querySelectorAll('section, .glass-card, .feature-card'));
+  targets.forEach((el) => el.classList.add('veyraq-reveal'));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    targets.forEach((el) => io.observe(el));
+  } else {
+    targets.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const doc = document.documentElement;
+        const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+        const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+        const prom = document.getElementById('prom-bar');
+        if (prom) prom.style.width = pct.toFixed(1) + '%';
+        pulseMarks(420);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('popstate', () => pulseMarks(1100));
+})();
+</script>
+</body>
 </html>
